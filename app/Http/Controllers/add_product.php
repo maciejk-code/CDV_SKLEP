@@ -18,8 +18,19 @@ class add_product extends Controller
     public function products_manage(){
 
 //        $products = DB::table('products')->get();
+        $products = [];
 
-        $products = ['1', '2'];
+        $product = (object)[
+            'name' => 'but'
+        ];
+
+        array_push($products, $product);
+
+        $product = (object) [
+            'name' => 'Koszulka'
+        ];
+
+        array_push($products, $product);
 
         return view('product.manage', ['products' => $products]);
     }
