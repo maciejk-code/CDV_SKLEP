@@ -13,19 +13,15 @@ class CreateTable extends Migration
      */
     public function up()
     {
-        Schema::create('table', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('shirts', function (Blueprint $table) {
+            $table->id('id_shirts');
+            $table->varchar('name');
+            $table->varchar('size');
+            $table->varchar('brand');
+            $table->varchar('color');
+            $table->varchar('material');
+            $table->int('prize');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('table');
-    }
 }
