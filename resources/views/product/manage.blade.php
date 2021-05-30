@@ -13,7 +13,7 @@
                     <div class="products-list">
                         @foreach($products as $product)
                             <div class="product-list">
-                            <p class="name">{{$product->name}}</p>
+{{--                            <p class="name">{{$product->name}}</p>--}}
                             </div>
                         @endforeach
                     </div>

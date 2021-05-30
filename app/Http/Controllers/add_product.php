@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class add_product extends Controller
 {
@@ -16,7 +17,9 @@ class add_product extends Controller
 
     public function products_manage(){
 
-        $products = DB::table('products')->get();
+//        $products = DB::table('products')->get();
+
+        $products = ['1', '2'];
 
         return view('product.manage', ['products' => $products]);
     }
