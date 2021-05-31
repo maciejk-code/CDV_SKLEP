@@ -1,0 +1,19 @@
+.product-info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.product-info span {
+  justify-content: space-between;
+}
+
+label {
+  margin-right: auto;
+  width: 100%;
+}
+
+input {
+  margin-left: auto;
+}
+
+/*# sourceMappingURL=add_product.css.map */

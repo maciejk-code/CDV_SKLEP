@@ -65,7 +65,7 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('products_manage') }}">
+                                    <a class="dropdown-item" href="{{ route('view_products_manage') }}">
                                         Products
                                     </a>
 

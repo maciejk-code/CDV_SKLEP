@@ -22,7 +22,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/add_product', [App\Http\Controllers\add_product::class, 'add_product'])->name('add_product');
+Route::get('/add_product', [App\Http\Controllers\Sklep::class, 'view_add_product'])->name('view_add_product');
 
-Route::get('/products', [App\Http\Controllers\add_product::class, 'products_manage'])->name('products_manage');
+Route::get('/products', [App\Http\Controllers\Sklep::class, 'view_products_manage'])->name('view_products_manage');
+
+Route::post('addproduct-form', [App\Http\Controllers\Sklep::class, 'add_product'])->name('add_product');
 

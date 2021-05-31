@@ -9,7 +9,7 @@
 
                     <div class="card-body">
                         <h1>Here you can manage your products!</h1>
-                        <a href="{{route('add_product')}}"><button>Add product</button></a>
+                        <a href="{{route('view_add_product')}}"><button>Add product</button></a>
                     </div>
                     <div class="products-list">
                         <div class="card-body">

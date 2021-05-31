@@ -1,12 +1,11 @@
 @extends('layouts.app')
-
+<link href="{{ asset('css/add_product.css') }}" rel="stylesheet">
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Dashboard') }}</div>
-
                     <div class="card-body">
                         {{--                    @if (session('status'))--}}
                         {{--                    <div class="alert alert-success" role="alert">--}}
@@ -17,17 +16,33 @@
                         {{ __('Add your product!') }}
                     </div>
                     <div class="card-body">
+                        <form name="addproducts-form" id="addproducts-form" method="post" action="{{url('addproduct-form')}}">
+                            @csrf
                         <div class="product-info">
                         <div class="product-photo">Product photo: <input type=file class="photo-input" accept="image/png"/></div>
                             <span>
-                                <label for="product_name">Product name:</label><input name="product_name" type="text"/></span>
-                            <span><label for="product_price">Product price: </label><input type="number" min="0" name="product_price" /></span>
-                            <span><label for="category">Category: </label>
+                                <label for="product_name">Product name:<input name="product_name" type="text"/></label></span>
+                                <span><label for="product_price">Product price: </label><input type="number" min="0" name="product_price" /></span>
+                                <span><label for="category">Category: </label>
                                 <select name="category" id="category">
-                                    <option value="trousers"/>Trousers</option>
+                                    <option value="trousers">Trousers</option>
+                                </select></span>
+                                    <span><label for="color">Color: </label><input name="color" type="text"/></span>
+                            <label for="size">Size</label>
+                            <select name="size" id="size">
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
                             </select>
-                            </span>
+
+                            <label>
+                                Material</label>
+                                <input name="material" type="text"/>
+                            <label for="brand">Brand</label><input type="text" name="brand">
+
+                            <button type="submit">Dodaj</button>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
