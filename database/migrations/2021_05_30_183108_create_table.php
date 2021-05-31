@@ -14,13 +14,51 @@ class CreateTable extends Migration
     public function up()
     {
         Schema::create('shirts', function (Blueprint $table) {
-            $table->id('id_shirts');
-            $table->varchar('name');
-            $table->varchar('size');
-            $table->varchar('brand');
-            $table->varchar('color');
-            $table->varchar('material');
-            $table->int('prize');
+            $table->id('id_shirt');
+            $table->string('name');
+            $table->string('size');
+            $table->string('brand');
+            $table->string('color');
+            $table->string('material');
+            $table->integer('prize');
+        });
+
+        Schema::create('trousers', function (Blueprint $table) {
+            $table->id('id_trouser');
+            $table->string('name');
+            $table->string('size');
+            $table->string('brand');
+            $table->string('color');
+            $table->string('material');
+            $table->integer('prize');
+        });
+
+        Schema::create('hoodies', function (Blueprint $table) {
+            $table->id('id_hoodie');
+            $table->string('name');
+            $table->string('size');
+            $table->string('brand');
+            $table->string('color');
+            $table->string('material');
+            $table->integer('prize');
+        });
+
+        Schema::create('sneakers', function (Blueprint $table) {
+            $table->id('id_sneaker');
+            $table->string('name');
+            $table->string('size');
+            $table->string('brand');
+            $table->string('color');
+            $table->string('material');
+            $table->integer('prize');
+        });
+
+        Schema::create('accessories', function (Blueprint $table) {
+            $table->id('id_accessories');
+            $table->string('name');
+            $table->string('type');
+            $table->string('brand');
+            $table->integer('prize');
         });
     }
 
