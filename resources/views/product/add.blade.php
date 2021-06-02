@@ -16,16 +16,20 @@
                         {{ __('Add your product!') }}
                     </div>
                     <div class="card-body">
-                        <form name="addproducts-form" id="addproducts-form" method="post" action="{{url('addproduct-form')}}">
+                        <form name="addproducts-form" id="addproducts-form" method="post" enctype="multipart/form-data" action="{{url('addproduct-form')}}">
                             @csrf
                         <div class="product-info">
-                        <div class="product-photo">Product photo: <input type=file class="photo-input" accept="image/png"/></div>
+                        <div class="product-photo">Product photo: xD<input name="image" type="file" class="photo-input" accept="image/png"/></div>
                             <span>
                                 <label for="product_name">Product name:<input name="product_name" type="text"/></label></span>
                                 <span><label for="product_price">Product price: </label><input type="number" min="0" name="product_price" /></span>
                                 <span><label for="category">Category: </label>
                                 <select name="category" id="category">
+                                    <option value="shirts">Shirts</option>
                                     <option value="trousers">Trousers</option>
+                                    <option value="hoodies">Hoodies</option>
+                                    <option value="sneakers">Sneakers</option>
+                                    <option value="accessories">Accessories</option>
                                 </select></span>
                                     <span><label for="color">Color: </label><input name="color" type="text"/></span>
                             <label for="size">Size</label>

@@ -13,6 +13,8 @@ class CreateTable extends Migration
      */
     public function up()
     {
+
+
         Schema::create('shirts', function (Blueprint $table) {
             $table->id('id_shirt');
             $table->string('name');
@@ -22,6 +24,7 @@ class CreateTable extends Migration
             $table->string('material');
             $table->integer('prize');
         });
+        DB::statement("ALTER TABLE shirts ADD image MEDIUMBLOB");
 
         Schema::create('trousers', function (Blueprint $table) {
             $table->id('id_trouser');
@@ -32,6 +35,8 @@ class CreateTable extends Migration
             $table->string('material');
             $table->integer('prize');
         });
+        DB::statement("ALTER TABLE trousers ADD image MEDIUMBLOB");
+
 
         Schema::create('hoodies', function (Blueprint $table) {
             $table->id('id_hoodie');
@@ -42,6 +47,7 @@ class CreateTable extends Migration
             $table->string('material');
             $table->integer('prize');
         });
+        DB::statement("ALTER TABLE hoodies ADD image MEDIUMBLOB");
 
         Schema::create('sneakers', function (Blueprint $table) {
             $table->id('id_sneaker');
@@ -52,6 +58,7 @@ class CreateTable extends Migration
             $table->string('material');
             $table->integer('prize');
         });
+        DB::statement("ALTER TABLE sneakers ADD image MEDIUMBLOB");
 
         Schema::create('accessories', function (Blueprint $table) {
             $table->id('id_accessories');
@@ -60,6 +67,7 @@ class CreateTable extends Migration
             $table->string('brand');
             $table->integer('prize');
         });
+        DB::statement("ALTER TABLE accessories ADD image MEDIUMBLOB");
     }
 
 }

@@ -17,12 +17,13 @@
                             @foreach($products as $product)
                             <div class="product-list">
                             <p class="name">{{$product->name}}</p>
+                            <img src="data:image/jpg;base64,{{$product->image}}"/>                           
                             </div>
                         @endforeach
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
 @endsection

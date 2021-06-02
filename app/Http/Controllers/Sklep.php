@@ -19,6 +19,8 @@ class Sklep extends Controller
         $brand = $request->input('brand');
         $color = $request->input('color');
         $material = $request->input('material');
+        $file = $request->file('image');
+        $contents = $file->openFile()->fread($file->getSize());
 
         $data = [
             'name' => $product_name,
@@ -26,7 +28,8 @@ class Sklep extends Controller
             'size' => $size,
             'brand' => $brand,
             'color' => $color,
-            'material' => $material
+            'material' => $material,
+            'image' => base64_encode($contents)
         ];
 
         try{
@@ -55,7 +58,10 @@ class Sklep extends Controller
 
 
         $products = DB::table('trousers')->get();
-
+        $products = $products->merge(DB::table("shirts")->get());
+        $products = $products->merge(DB::table("hoodies")->get());
+        $products = $products->merge(DB::table("sneakers")->get());
+        $products = $products->merge(DB::table("accessories")->get());
 
 //        array_push($products, $product);
 
