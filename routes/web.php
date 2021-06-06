@@ -29,3 +29,5 @@ Route::get('/products', [App\Http\Controllers\Sklep::class, 'view_products_manag
 Route::post('addproduct-form', [App\Http\Controllers\Sklep::class, 'add_product'])->name('add_product');
 
 Route::get('/dash', [App\Http\Controllers\HomeController::class, 'index2'])->name('dash');
+
+Route::get('product/{category}/{product}', [App\Http\Controllers\Sklep::class, 'view_single_product'])->name('single_product');

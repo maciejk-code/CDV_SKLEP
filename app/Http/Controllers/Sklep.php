@@ -52,7 +52,26 @@ class Sklep extends Controller
         return view('product.add');
     }
 
+    public function view_single_product(){
 
+        $category = request()->route('category');
+        $product_id = request()->route('product');
+        $category_id = '';
+
+        switch($category){
+            case 'hoodies':
+                $category_id = 'id_hoodie';
+                break;
+
+            case 'shirts':
+                $category_id = 'id_shirt';
+                break;
+        }
+
+        $product = DB::table($category)->where($category_id, '=', $product_id)->get()->first();
+
+        return view('product.single', [ 'product' => $product, 'category_id' => $category_id, 'product_id' => $product_id]);
+    }
 
     public function view_products_manage(){
 
