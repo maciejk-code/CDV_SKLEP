@@ -6,32 +6,32 @@
   <title>Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="{{ URL::asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback')}}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{ URL::asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="{{ URL::asset('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')}}">
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="{{ URL::asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
   <!-- iCheck -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="{{ URL::asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- JQVMap -->
-  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <link rel="stylesheet" href="{{ URL::asset('plugins/jqvmap/jqvmap.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{ URL::asset('dist/css/adminlte.min.css')}}">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="{{ URL::asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="{{ URL::asset('plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="{{ URL::asset('plugins/summernote/summernote-bs4.min.css')}}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src="/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div>
 
   <!-- Navbar -->
@@ -80,7 +80,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
@@ -106,7 +106,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="list/category/shirts/type/najk" class="nav-link">
+                <a href="pages/layout/top-nav.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Basic</p>
                 </a>
@@ -302,52 +302,16 @@
         <div style="display: flex">
           <!-- Left col -->
           <section class="col-lg-12 connectedSortable">
-            <!-- NIKE -->
-            <div class="card bg-gradient-red">             
-              <div class="card-body">
-                <div class="row">
-                  <div style=" flex:30%;  margin-left:40px">
-                    <h1>Discover Nike</h1>
-                    <p>Rediscover Nike products for every season</p>
-                    <p>Click for more</p>
-                  </div>
-                  <div>
-                    <img src="{{asset('img/airmax270.jpg')}}"  style="float:right; margin-right:40px; border-radius: 25px;" alt="airmax">
-                  </div>
-                </div>
-              </div>
-            </div>           
-            {{-- ADIDAS --}}
-            <div class="card bg-gradient-info">             
-              <div class="card-body">
-                <div class="row">
-                  <div style=" flex:70%;  margin-left:40px">
-                    <img src="{{asset('img/adidas.jpg')}}"  style="float:left; margin-left:40px; border-radius: 25px;" height="550px" alt="adidas_model">
-                  </div>
-                  <div style="float:right; margin-right:40px">
-                    <h1>New ADIDAS products</h1>
-                    <p>Search for new products avaible only on our site</p>
-                    <p>Click for more</p>                   
-                  </div>
-                </div>
-              </div><!-- /.card-body -->
-            </div>
-            {{-- SPORT --}}
-            <div class="card bg-gradient-green">             
-              <div class="card-body">
-                <div class="row">
-                  <div style=" flex:30%;  margin-left:40px">
-                    <h1>Everything for SPORT fans</h1>
-                    <p>Football? Basketball? Or even Slaps? We have EVERYTHING</p>
-                    <p>Click for more</p> 
-                  </div>
-                  <div>
-                    <img src="{{asset('img/lewy.jpg')}}"  style="float:right; margin-right:40px; border-radius: 25px;" height="500px" alt="lewy">
-                  </div>
-                </div>
-              </div>
-            </div> 
             
+            <div class="card-body">
+              <strong><h2>Products list:</h2></strong>
+              @foreach($products as $product)
+              <div class="product-list">
+              <p class="name">{{$product->name}}</p>
+              <img src="data:image/jpg;base64,{{$product->image}}"/>                           
+              </div>
+          @endforeach
+          </div>
 
             
 
@@ -381,38 +345,38 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
+<script src="/plugins/chart.js/Chart.min.js"></script>
 <!-- Sparkline -->
-<script src="plugins/sparklines/sparkline.js"></script>
+<script src="/plugins/sparklines/sparkline.js"></script>
 <!-- JQVMap -->
-<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<script src="/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
 <!-- jQuery Knob Chart -->
-<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<script src="/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<script src="/plugins/moment/moment.min.js"></script>
+<script src="/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
-<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<script src="/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.js"></script>
+<script src="/dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<script src="/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
+<script src="/dist/js/pages/dashboard.js"></script>
 </body>
 </html>
