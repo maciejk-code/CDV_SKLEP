@@ -20,6 +20,8 @@ class Sklep extends Controller
         $color = $request->input('color');
         $material = $request->input('material');
         $file = $request->file('image');
+        $type = $request->input('type');
+        $description = $request->input('description');
         $contents = $file->openFile()->fread($file->getSize());
 
         $data = [
@@ -30,8 +32,8 @@ class Sklep extends Controller
             'color' => $color,
             'material' => $material,
             'image' => base64_encode($contents),
-            'type' => 'test',
-            'description' => 'test'
+            'type' => $type,
+            'description' => $description
         ];
 
         try{
