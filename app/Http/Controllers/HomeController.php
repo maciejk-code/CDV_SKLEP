@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use mysql_xdevapi\Exception;
 
@@ -23,18 +24,21 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
+
+    public function index(){
+        $user = Auth::user();
+        return view('adminLte.dashboard', ['user' => $user]);
     }
 
-    public function index2(){
-        return view('adminLte.dashboard');
-    }
     public function index3(){
         $products = DB::table('shirts')->where('type', '=', 'ck')->get();
-        
+
 
         return view('adminLte.list', ['products' => $products]);
+    }
+
+    public function admin_panel(){
+//        return view('adminLte.admin_panel');
+        return json_encode(['admin_panel']);
     }
 }

@@ -52,7 +52,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
-     
+
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
@@ -83,25 +83,57 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">
+    @php
+    if(isset($user))   print $user->name;
+    else print("Zaloguj się!");
+    @endphp
+          </a>
         </div>
       </div>
 
-      
+
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          
-          
+
+            <li class="nav-item">
+                <a href="{{route('admin_panel')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>ADMIN SHOP MANAGEMENT</p>
+                    <i class="fas fa-angle-left right"></i>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="list/category/shirts/type/najk" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>User management</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Products management</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/layout/boxed.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>View orders</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 T-shirts
-                <i class="fas fa-angle-left right"></i>                
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
@@ -140,7 +172,7 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Long sleeve</p>
                 </a>
-              
+
             </ul>
           </li>
           <li class="nav-item">
@@ -278,7 +310,7 @@
                 All
               </p>
             </a>
-          </li>     
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -289,21 +321,21 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    
+
     <!-- /.content-header -->
 
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        
+
         <!-- /.row -->
         <!-- Main row -->
         <div style="display: flex">
           <!-- Left col -->
           <section class="col-lg-12 connectedSortable">
             <!-- NIKE -->
-            <div class="card bg-gradient-red">             
+            <div class="card bg-gradient-red">
               <div class="card-body">
                 <div class="row">
                   <div style=" flex:30%;  margin-left:40px">
@@ -316,9 +348,9 @@
                   </div>
                 </div>
               </div>
-            </div>           
+            </div>
             {{-- ADIDAS --}}
-            <div class="card bg-gradient-info">             
+            <div class="card bg-gradient-info">
               <div class="card-body">
                 <div class="row">
                   <div style=" flex:70%;  margin-left:40px">
@@ -327,36 +359,36 @@
                   <div style="float:right; margin-right:40px">
                     <h1>New ADIDAS products</h1>
                     <p>Search for new products avaible only on our site</p>
-                    <p>Click for more</p>                   
+                    <p>Click for more</p>
                   </div>
                 </div>
               </div><!-- /.card-body -->
             </div>
             {{-- SPORT --}}
-            <div class="card bg-gradient-green">             
+            <div class="card bg-gradient-green">
               <div class="card-body">
                 <div class="row">
                   <div style=" flex:30%;  margin-left:40px">
                     <h1>Everything for SPORT fans</h1>
                     <p>Football? Basketball? Or even Slaps? We have EVERYTHING</p>
-                    <p>Click for more</p> 
+                    <p>Click for more</p>
                   </div>
                   <div>
                     <img src="{{asset('img/lewy.jpg')}}"  style="float:right; margin-right:40px; border-radius: 25px;" height="500px" alt="lewy">
                   </div>
                 </div>
               </div>
-            </div> 
-            
+            </div>
 
-            
+
+
 
             <!-- TO DO List -->
-            
+
             <!-- /.card -->
           </section>
           <!-- /.Left col -->
-          
+
         </div>
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->

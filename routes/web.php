@@ -13,10 +13,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+
+Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin_panel'])->name('admin_panel');
+Route::get('/users', [App\Http\Controllers\Sklep::class, 'view_users'])->name("users_management");
 
 Auth::routes();
 
@@ -28,7 +33,8 @@ Route::get('/products', [App\Http\Controllers\Sklep::class, 'view_products_manag
 
 Route::post('addproduct-form', [App\Http\Controllers\Sklep::class, 'add_product'])->name('add_product');
 
-Route::get('/dash', [App\Http\Controllers\HomeController::class, 'index2'])->name('dash');
+Route::get('/dash', [App\Http\Controllers\HomeController::class, 'index'])->name('dash');
+
 Route::get('/list/category/{category}/type/{type}', function ($category, $type){
     $products = DB::table($category)->where('brand', '=', $type)->get();
     return view('adminLte.list', ['products' => $products]);

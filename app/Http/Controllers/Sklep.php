@@ -85,4 +85,12 @@ class Sklep extends Controller
 
         return view('product.manage', ['products' => $products]);
     }
+
+    public function view_users(){
+        $users = DB::table('users')->get();
+
+        
+
+        return view('admin.users', ['users' => $users]);
+    }
 }
