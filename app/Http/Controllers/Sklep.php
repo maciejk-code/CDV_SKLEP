@@ -89,7 +89,7 @@ class Sklep extends Controller
     public function view_users(){
         $users = DB::table('users')->get();
 
-        
+
 
         return view('admin.users', ['users' => $users]);
     }
