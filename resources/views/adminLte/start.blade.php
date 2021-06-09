@@ -1,3 +1,6 @@
+@php use Illuminate\Support\Facades\Session;
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,8 +88,9 @@
                 <div class="info">
                     <a href="#" class="d-block">
                         @php
+                        $user = Auth::user();
                             if(isset($user))   print $user->name;
-                            else print("Zaloguj się!");
+                            else echo '<a href="'.route('login').'">Log in!</a>';
                         @endphp
                     </a>
                 </div>
