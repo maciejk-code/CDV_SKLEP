@@ -6,10 +6,10 @@
                             <div style="display: flex; flex-wrap: wrap">
                             @foreach($products['shirts'] as $product)
                                     <div style="display: flex; flex-direction: column" class="product-list">
-                                        <a href="{{$link = 'product/shirts/'.$product->id_shirt}}">
-                                <img src="data:image/jpg;base64,{{$product->image}}" width="150px" height="150px" href="{{$link = 'product/hoodies/'.$product->id_shirt}}"/>
+                                        <a href="{{$link = 'product/shirts/'.$product->id}}">
+                                <img src="data:image/jpg;base64,{{$product->image}}" width="150px" height="150px" href="{{$link = 'product/hoodies/'.$product->id}}"/>
                                         </a>
-                                        <p class="product-name"><a href="{{$link = 'product/shirts/'.$product->id_shirt}}">{{$product->name}}</a></p>
+                                        <p class="product-name"><a href="{{$link = 'product/shirts/'.$product->id}}">{{$product->name}}</a></p>
                                     </div>
                             @endforeach
                             </div>
@@ -17,10 +17,10 @@
                             <div style="display: flex; flex-wrap: wrap">
                             @foreach($products['hoodies'] as $product)
                                 <div style="display: flex; flex-direction: column" class="product-list">
-                                    <a href="{{$link = 'product/hoodies/'.$product->id_hoodie}}">
+                                    <a href="{{$link = 'product/hoodies/'.$product->id}}">
                                     <img src="data:image/jpg;base64,{{$product->image}}" width="150px" height="150px" />
                                     </a>
-                                    <p class="product-name"><a href="{{$link = 'product/hoodies/'.$product->id_hoodie}}">{{$product->name}}</a></p>
+                                    <p class="product-name"><a href="{{$link = 'product/hoodies/'.$product->id}}">{{$product->name}}</a></p>
                                 </div>
                             @endforeach
                             </div>
@@ -28,10 +28,10 @@
                                 <div style="display: flex; flex-wrap: wrap">
                             @foreach($products['accessories'] as $product)
                                         <div style="display: flex; flex-direction: column" class="product-list">
-                                            <a href="{{$link = 'product/accessories/'.$product->id_accessories}}">
+                                            <a href="{{$link = 'product/accessories/'.$product->id}}">
                                     <img src="data:image/jpg;base64,{{$product->image}}" width="150px" height="150px"/>
                                             </a>
-                                    <p class="product-name"><a href="{{$link = 'product/accessories/'.$product->id_accessories}}">{{$product->name}}</a></p>
+                                    <p class="product-name"><a href="{{$link = 'product/accessories/'.$product->id}}">{{$product->name}}</a></p>
                                 </div>
                             @endforeach
                                 </div>

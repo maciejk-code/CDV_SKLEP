@@ -29,7 +29,9 @@ class Sklep extends Controller
             'brand' => $brand,
             'color' => $color,
             'material' => $material,
-            'image' => base64_encode($contents)
+            'image' => base64_encode($contents),
+            'type' => 'test',
+            'description' => 'test'
         ];
 
         try{
@@ -42,11 +44,6 @@ class Sklep extends Controller
 
     /************/
 
-
-
-
-
-
 //    VIEWS
     public function view_add_product(){
         return view('product.add');
@@ -56,17 +53,17 @@ class Sklep extends Controller
 
         $category = request()->route('category');
         $product_id = request()->route('product');
-        $category_id = '';
+        $category_id = 'id';
 
-        switch($category){
-            case 'hoodies':
-                $category_id = 'id_hoodie';
-                break;
-
-            case 'shirts':
-                $category_id = 'id_shirt';
-                break;
-        }
+//        switch($category){
+//            case 'hoodies':
+//                $category_id = 'id_hoodie';
+//                break;
+//
+//            case 'shirts':
+//                $category_id = 'id_shirt';
+//                break;
+//        }
 
         $product = DB::table($category)->where($category_id, '=', $product_id)->get()->first();
 
