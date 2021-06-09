@@ -29,5 +29,11 @@ Route::get('/products', [App\Http\Controllers\Sklep::class, 'view_products_manag
 Route::post('addproduct-form', [App\Http\Controllers\Sklep::class, 'add_product'])->name('add_product');
 
 Route::get('/dash', [App\Http\Controllers\HomeController::class, 'index2'])->name('dash');
+Route::get('/list/category/{category}/type/{type}', function ($category, $type){
+    $products = DB::table($category)->where('brand', '=', $type)->get();
+    return view('adminLte.list', ['products' => $products]);
+})->name('list');
 
 Route::get('product/{category}/{product}', [App\Http\Controllers\Sklep::class, 'view_single_product'])->name('single_product');
+
+//[App\Http\Controllers\HomeController::class, 'index3'
