@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard</title>
+    
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -45,7 +46,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="index3.html" class="nav-link">Home</a>
+                <a href="/dash" class="nav-link">Home</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link">Contact</a>
@@ -73,7 +74,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
+        <a href="/dash" class="brand-link">
             <img src="{{asset('/img/cdv.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
             <span class="brand-text font-weight-light">CDV_SKLEP</span>
         </a>
@@ -148,31 +149,31 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                <a href="/list/category/shirts/type/with_text" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>With text</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/layout/boxed.html" class="nav-link">
+                                <a href="/list/category/shirts/type/with_picture" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>With picture</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                                <a href="/list/category/shirts/type/polo" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Polo</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                                <a href="/list/category/shirts/type/sport" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Sport</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/layout/fixed-sidebar-custom.html" class="nav-link">
+                                <a href="/list/category/shirts/type/long_sleeve" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Long sleeve</p>
                                 </a>
@@ -189,19 +190,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/charts/chartjs.html" class="nav-link">
+                                <a href="/list/category/hoodies/type/hoodie" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Hoodie</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/charts/flot.html" class="nav-link">
+                                <a href="/list/category/hoodies/type/basic" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Basic</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/charts/inline.html" class="nav-link">
+                                <a href="/list/category/hoodies/type/with_slider" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>With slider</p>
                                 </a>
@@ -218,19 +219,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/UI/general.html" class="nav-link">
+                                <a href="/list/category/trousers/type/trousers" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Trousers</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/UI/icons.html" class="nav-link">
+                                <a href="/list/category/trousers/type/shorts" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Shorts</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/UI/buttons.html" class="nav-link">
+                                <a href="/list/category/trousers/type/sport" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Sport</p>
                                 </a>
@@ -247,25 +248,25 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/forms/general.html" class="nav-link">
+                                <a href="/list/category/sneakers/type/sneakers" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Sneakers</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/forms/advanced.html" class="nav-link">
+                                <a href="/list/category/sneakers/type/high" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>High</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/forms/editors.html" class="nav-link">
+                                <a href="/list/category/sneakers/type/low" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Low</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/forms/validation.html" class="nav-link">
+                                <a href="/list/category/sneakers/type/sport" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Sport</p>
                                 </a>
@@ -282,25 +283,25 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/tables/simple.html" class="nav-link">
+                                <a href="/list/category/accessories/type/watch" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Watches</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/tables/data.html" class="nav-link">
+                                <a href="/list/category/accessories/type/caps" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Caps</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/tables/data.html" class="nav-link">
+                                <a href="/list/category/accessories/type/jewelry" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Jewelry</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/tables/jsgrid.html" class="nav-link">
+                                <a href="/list/category/accessories/type/sunglasses" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Sunglasses</p>
                                 </a>

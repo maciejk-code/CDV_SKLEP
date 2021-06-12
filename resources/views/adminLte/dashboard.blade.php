@@ -53,7 +53,7 @@
                   <div style=" flex:30%;  margin-left:40px">
                     <h1>Everything for SPORT fans</h1>
                     <p>Football? Basketball? Or even Slaps? We have EVERYTHING</p>
-                    <p>Click for more</p>
+                    <a href="/nike"><p>Click for more</p></a>
                   </div>
                   <div>
                     <img src="{{asset('img/lewy.jpg')}}"  style="float:right; margin-right:40px; border-radius: 25px;" height="500px" alt="lewy">

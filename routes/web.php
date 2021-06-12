@@ -39,16 +39,26 @@ Route::get('/list/category/{category}/type/{type}', function (Request $request, 
     $products_query = DB::table($category)->where('type', '=', $type);
     $color = $request->query('color');
     $size = $request->query('size');
+    $brand = $request->query('brand');
+    $material = $request->query('material');
     if($color!="all" && $color!=""){
         $products_query = $products_query->where('color', '=', $color);
     }
     if($size!="all" && $size!=""){
         $products_query = $products_query->where('size', '=', $size);
     }
+    if($brand!="all" && $brand!=""){
+        $products_query = $products_query->where('brand', '=', $brand);
+    }
+    if($material!="all" && $material!=""){
+        $products_query = $products_query->where('material', '=', $material);
+    }
     $products = $products_query->get();
     return view('adminLte.list', ['products' => $products]);
 
 })->name('list');
+
+Route::get('/nike', [App\Http\Controllers\Sklep::class, 'nike'])->name('nike');
 
 Route::get('product/{category}/{product}', [App\Http\Controllers\Sklep::class, 'view_single_product'])->name('single_product');
 
