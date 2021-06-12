@@ -29,7 +29,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/add_product', [App\Http\Controllers\Sklep::class, 'view_add_product'])->name('view_add_product');
 
-Route::get('/products', [App\Http\Controllers\Sklep::class, 'view_products_manage'])->name('view_products_manage');
+Route::get('/admin/products_manage', [App\Http\Controllers\Sklep::class, 'view_products_manage'])->name('view_products_manage');
 
 Route::post('addproduct-form', [App\Http\Controllers\Sklep::class, 'add_product'])->name('add_product');
 
@@ -47,7 +47,7 @@ Route::get('/list/category/{category}/type/{type}', function (Request $request, 
     }
     $products = $products_query->get();
     return view('adminLte.list', ['products' => $products]);
-    
+
 })->name('list');
 
 Route::get('product/{category}/{product}', [App\Http\Controllers\Sklep::class, 'view_single_product'])->name('single_product');

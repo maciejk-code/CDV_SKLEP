@@ -20,7 +20,7 @@ class Sklep extends Controller
         $color = $request->input('color');
         $material = $request->input('material');
         $file = $request->file('image');
-        $type = $request->input('type');
+        $type = $request->input('type_'.$category);
         $description = $request->input('description');
         $contents = $file->openFile()->fread($file->getSize());
 
@@ -38,7 +38,8 @@ class Sklep extends Controller
 
         try{
             DB::table($category)->insert($data);
-            return json_encode(['success' => true]);
+            $referer = request()->headers->get('referer');
+            return redirect( $referer)->with('status', 'Product inserted!');
         }catch(Exception $exception){
             json_encode($exception);
         }

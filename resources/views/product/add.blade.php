@@ -19,7 +19,7 @@
                         <form name="addproducts-form" id="addproducts-form" method="post" enctype="multipart/form-data" action="{{url('addproduct-form')}}">
                             @csrf
                         <div class="product-info">
-                        <div class="product-photo">Product photo: xD<input name="image" type="file" class="photo-input" accept="image/png"/></div>
+                        <div class="product-photo">Product photo: <input name="image" type="file" class="photo-input" accept="image/png"/></div>
                             <span>
                                 <label for="product_name">Product name:<input name="product_name" type="text"/></label></span>
                                 <span><label for="product_price">Product price: </label><input type="number" min="0" name="product_price" /></span>

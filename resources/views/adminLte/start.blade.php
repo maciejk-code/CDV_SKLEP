@@ -118,7 +118,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                <a href="{{route('view_products_manage')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Products management</p>
                                 </a>
