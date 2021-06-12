@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,9 +35,19 @@ Route::post('addproduct-form', [App\Http\Controllers\Sklep::class, 'add_product'
 
 Route::get('/dash', [App\Http\Controllers\HomeController::class, 'index'])->name('dash');
 
-Route::get('/list/category/{category}/type/{type}', function ($category, $type){
-    $products = DB::table($category)->where('brand', '=', $type)->get();
+Route::get('/list/category/{category}/type/{type}', function (Request $request, $category, $type){
+    $products_query = DB::table($category)->where('type', '=', $type);
+    $color = $request->query('color');
+    $size = $request->query('size');
+    if($color!="all" && $color!=""){
+        $products_query = $products_query->where('color', '=', $color);
+    }
+    if($size!="all" && $size!=""){
+        $products_query = $products_query->where('size', '=', $size);
+    }
+    $products = $products_query->get();
     return view('adminLte.list', ['products' => $products]);
+    
 })->name('list');
 
 Route::get('product/{category}/{product}', [App\Http\Controllers\Sklep::class, 'view_single_product'])->name('single_product');

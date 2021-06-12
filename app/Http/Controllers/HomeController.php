@@ -31,8 +31,7 @@ class HomeController extends Controller
     }
 
     public function index3(){
-        $products = DB::table('shirts')->where('type', '=', 'ck')->get();
-
+        $products = DB::table('shirts')->where('type', '=', 'basic')->get();
 
         return view('adminLte.list', ['products' => $products]);
     }
