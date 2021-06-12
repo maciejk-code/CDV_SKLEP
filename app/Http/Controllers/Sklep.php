@@ -48,6 +48,31 @@ class Sklep extends Controller
     /************/
 
 //    VIEWS
+
+    private function getAllProducts(){
+        $products = DB::table('trousers')->get();
+        $products = $products->merge(DB::table("shirts")->get());
+        $products = $products->merge(DB::table("hoodies")->get());
+        $products = $products->merge(DB::table("sneakers")->get());
+        $products = $products->merge(DB::table("accessories")->get());
+
+        return $products;
+    }
+
+    public function show_all_products(){
+        $accessories = DB::table('accessories')->get();
+        $hoodies = DB::table('hoodies')->get();
+        $shirts = DB::table('shirts')->get();
+
+        $products = [
+            'shirts'=> $shirts,
+            'hoodies' => $hoodies,
+            'accessories' => $accessories
+        ];
+
+        return view('product.show_all', ['products' => $products]);
+    }
+
     public function view_add_product(){
         return view('product.add');
     }
@@ -56,31 +81,16 @@ class Sklep extends Controller
 
         $category = request()->route('category');
         $product_id = request()->route('product');
-        $category_id = 'id';
 
-//        switch($category){
-//            case 'hoodies':
-//                $category_id = 'id_hoodie';
-//                break;
-//
-//            case 'shirts':
-//                $category_id = 'id_shirt';
-//                break;
-//        }
+        $product = DB::table($category)->where('id', '=', $product_id)->get()->first();
 
-        $product = DB::table($category)->where($category_id, '=', $product_id)->get()->first();
-
-        return view('product.single', [ 'product' => $product, 'category_id' => $category_id, 'product_id' => $product_id]);
+        return view('product.single', [ 'product' => $product, 'category_id' => 'id', 'product_id' => $product_id]);
     }
 
     public function view_products_manage(){
 
+        $products = $this->getAllProducts();
 
-        $products = DB::table('trousers')->get();
-        $products = $products->merge(DB::table("shirts")->get());
-        $products = $products->merge(DB::table("hoodies")->get());
-        $products = $products->merge(DB::table("sneakers")->get());
-        $products = $products->merge(DB::table("accessories")->get());
 
 //        array_push($products, $product);
 

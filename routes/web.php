@@ -21,13 +21,15 @@ use Illuminate\Http\Request;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin_panel'])->name('admin_panel');
-Route::get('/users', [App\Http\Controllers\Sklep::class, 'view_users'])->name("users_management");
+Route::get('/admin/users', [App\Http\Controllers\Sklep::class, 'view_users'])->name("users_management");
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/add_product', [App\Http\Controllers\Sklep::class, 'view_add_product'])->name('view_add_product');
+Route::get('/products', [App\Http\Controllers\Sklep::class, 'show_all_products'])->name('view_all_products');
+
+Route::get('/admin/add_product', [App\Http\Controllers\Sklep::class, 'view_add_product'])->name('view_add_product');
 
 Route::get('/admin/products_manage', [App\Http\Controllers\Sklep::class, 'view_products_manage'])->name('view_products_manage');
 

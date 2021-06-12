@@ -13,19 +13,15 @@
             <!-- /.row -->
             <!-- Main row -->
             <div style="display: flex; flex-direction: column">
-                <div class="products-list">
-                    <strong><h2>Products list:</h2></strong>
-                    <div class="card-body" style="display: flex; flex-wrap: wrap">
-                        @foreach($products as $product)
-                            <div class="product-list">
-                                <p class="name">{{$product->name}}</p>
-                                <img src="data:image/jpg;base64,{{$product->image}}" width="300" height="300"/>
-                            </div>
-                        @endforeach
-                    </div>
+
+                <div class="card">
+                @include('product.show_multiple')
                 </div>
 
+
+                <div class="card">
                 <div class="card-body">
+
                 <form name="addproducts-form" id="addproducts-form" method="post" enctype="multipart/form-data" action="{{url('addproduct-form')}}">
                     <h2>Add product</h2>
                     @csrf
@@ -97,7 +93,7 @@
                     @endif
                 </div>
 
-
+                </div>
             </div>
             <!-- /.row (main row) -->
         </div><!-- /.container-fluid -->

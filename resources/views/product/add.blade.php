@@ -31,7 +31,17 @@
                                     <option value="sneakers">Sneakers</option>
                                     <option value="accessories">Accessories</option>
                                 </select></span>
-                                    <span><label for="color">Color: </label><input name="color" type="text"/></span>
+                                    <span><label for="color">Color: </label>
+                                        <select name="color" id="color">
+                                            <option value="red">Red</option>
+                                            <option value="blue">Blue</option>
+                                            <option value="black">Black</option>
+                                            <option value="grey">Grey</option>
+                                            <option value="white">White</option>
+                                            <option value="Green">Green</option>
+                                            <option value="Orange">Orange</option>
+                                            <option value="Pink">Pink</option>
+                                        </select></span>
                             <label for="size">Size</label>
                             <select name="size" id="size">
                                 <option value="S">Small</option>
@@ -41,7 +51,12 @@
 
                             <label>
                                 Material</label>
-                                <input name="material" type="text"/>
+                                <select name="material">
+                                    <option value="cotton">Cotton</option>
+                                            <option value="leather">Leather</option>
+                                            <option value="denim">Denim</option>
+                                            <option value="polyester">Polyester</option>
+                                </select>
                             <label for="brand">Brand</label><input type="text" name="brand">
 
                             <button type="submit">Dodaj</button>

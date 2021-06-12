@@ -13,6 +13,8 @@
             <!-- Main row -->
             <div style="display: flex">
                 <!-- Left col -->
+                <div class="card" style="width: 100%">
+                    <div class="card-body">
                 <section class="col-lg-12 connectedSortable">
                    <h1>Registered users:</h1>
                     @foreach($users as $user)
@@ -22,10 +24,12 @@
                         @else
                             <div class="card-body bg-dark" style="display: flex; justify-content: space-between">
                         @endif
-                                <span>{{$loop->iteration}}</span><span>{{$user->name}}</span><span> {{$user->email}} </span>
+                                <span>{{$loop->iteration}}</span><span style="width: 40%">{{$user->name}}</span><span style="width: 40%"> {{$user->email}} </span>
                         </div>
                     @endforeach
                 </section>
+                    </div>
+                </div>
                 <!-- /.Left col -->
 
             </div>
