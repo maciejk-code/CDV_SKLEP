@@ -5,7 +5,9 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
+    <div class="card card-body">
     <h1 style="text-align: center">Products management</h1>
+    </div>
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->

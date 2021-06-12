@@ -84,7 +84,7 @@ class Sklep extends Controller
 
         $product = DB::table($category)->where('id', '=', $product_id)->get()->first();
 
-        return view('product.single', [ 'product' => $product, 'category_id' => 'id', 'product_id' => $product_id]);
+        return view('product.single', [ 'product' => $product, 'category_id' => 'id', 'product_id' => $product_id, 'category' => $category]);
     }
 
     public function view_products_manage(){
