@@ -56,7 +56,15 @@
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
             <!-- Navbar Search -->
-
+            <li class="nav-item" id="shopping-cart-link">
+                <script>
+                    var url = '{{ route("cart", "mycart") }}';
+                    url = url.replace('mycart', localStorage.getItem('mycart'));
+                    document.getElementById('shopping-cart-link').innerHTML = '<a class="nav-link" data-slide="true" href="'+url+'" role="button"><i class="fa fa-shopping-cart"></i>';
+                </script>
+{{--                <a class="nav-link" data-slide="true" href="'+url+'" role="button"><i class="fa fa-shopping-cart"></i>--}}
+                </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                     <i class="fas fa-expand-arrows-alt"></i>
@@ -67,6 +75,7 @@
                     <i class="fas fa-th-large"></i>
                 </a>
             </li>
+
         </ul>
     </nav>
     <!-- /.navbar -->

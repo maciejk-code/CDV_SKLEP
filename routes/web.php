@@ -45,4 +45,6 @@ Route::get('/sport', [App\Http\Controllers\Sklep::class, 'sport'])->name('sport'
 
 Route::get('product/{category}/{product}', [App\Http\Controllers\Sklep::class, 'view_single_product'])->name('single_product');
 
+Route::get('/cart', [\App\Http\Controllers\Sklep::class, 'show_cart'])->name('cart');
+
 //[App\Http\Controllers\HomeController::class, 'index3'
