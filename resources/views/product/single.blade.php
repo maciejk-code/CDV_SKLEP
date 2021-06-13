@@ -29,7 +29,7 @@
                             <p class="product-description p-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae dictum nibh. Aenean non vehicula sem. Aliquam dignissim sit amet neque euismod semper. Mauris dignissim dui ut vulputate aliquet. Proin aliquet dui vel urna semper dignissim. Nullam facilisis mauris ut augue pretium sollicitudin. Pellentesque at finibus enim. Mauris vitae quam eu metus pellentesque euismod in et eros. In tristique magna sit amet urna ultrices, at accumsan ex consequat. Proin suscipit, orci molestie lobortis vestibulum, justo velit finibus metus, vitae hendrerit ex nibh et orci. In quis tortor elementum, tristique nulla in, porttitor leo. Maecenas maximus varius pulvinar. Donec risus augue, fermentum pulvinar ante at, lobortis pulvinar felis. Nunc vitae libero aliquam, blandit mauris id, semper nibh.</p>
                             <div class="card">
                                 <div class="card-body">
-                                    <input type="number" min="1" value="1" id="qty"/>
+                                    <input type="number" min="1" placeholder="1" id="qty"/>
                                     <button type="submit" class="button-add-to-cart" data-name="{{$product->name}}" data-id="{{$product->id}}" data-category="{{$category}}">Dodaj do koszyka</button>
                                 </div>
                             </div>
@@ -68,26 +68,37 @@
 
 @include('adminLte.end')
 
+
 <script>
+    let mycart = localStorage.getItem("mycart");
+    var basket = JSON.parse(mycart),
+        array = [],
+    product = {};
+
+    if (basket == null) {
+        basket = new Array();
+    }
+
     $(".button-add-to-cart").click(function() {
-        let basket = JSON.parse(localStorage.getItem("mycart"));
-        if (!basket) {
-            basket = {}
+        let id = $(this).attr("data-id"),
+            category = $(this).attr("data-category"),
+            qty = document.getElementById('qty').value;
+
+
+        if(qty==0){
+            qty=1;
         }
 
-        let name = $(this).attr('data-name');
-        let id = $(this).attr("data-id");
-        let category = $(this).attr("data-category");
-        let qty = document.getElementById('qty').value;
+        alert("Dodano do koszyka "+qty+" sztuk!");
 
-        let product = {
-            name: name,
-            id: id,
+        product = [{
             category: category,
+            id: id,
             qty: qty
-        };
+        }];
 
-        basket['']
+        basket.push(product);
+
         localStorage.setItem("mycart", JSON.stringify(basket));
 
     });

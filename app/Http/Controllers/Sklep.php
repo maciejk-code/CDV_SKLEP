@@ -59,6 +59,11 @@ class Sklep extends Controller
         return $products;
     }
 
+    public function show_cart(){
+
+        return view('layouts.cart');
+    }
+
     public function show_all_products(){
         $accessories = DB::table('accessories')->get();
         $hoodies = DB::table('hoodies')->get();
