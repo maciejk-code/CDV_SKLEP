@@ -107,6 +107,13 @@ class Sklep extends Controller
 
     public function list(Request $request, $category, $type){
         $products_query = DB::table($category)->where('type', '=', $type);
+        if($category=='sneakers'){
+            $shoes_check = "shoes";
+        }else{
+            $shoes_check = "";
+        }
+        $brand_check = "";
+        $category_check = "filled";
         $color = $request->query('color');
         $size = $request->query('size');
         $brand = $request->query('brand');
@@ -133,12 +140,26 @@ class Sklep extends Controller
         }
     
         $products = $products_query->get();
-        return view('adminLte.list', ['products' => $products]);
+        return view('adminLte.list', ['products' => $products, 'brand_check' => $brand_check, 'category_check' => $category_check, 'shoes_check' => $shoes_check]);
     }
         
     public function nike(Request $request){
-        $products = $this->getAllProducts();
-
+        $category = $request->query('category');
+        if($category!="all" && $category!=""){
+            $products = DB::table($category)->get();
+            if($category=='sneakers'){
+                $shoes_check = "shoes";
+            }
+            else{
+                $shoes_check = "";
+            }
+        }
+        else{
+            $products = $this->getAllProducts();
+            $shoes_check = "";
+        }  
+        $brand_check = 'nike';
+        $category_check = '';
         $products = $products->where('brand', '=', 'nike');
         $color = $request->query('color');
         $size = $request->query('size');
@@ -164,12 +185,25 @@ class Sklep extends Controller
             $products = $products->where('prize', '<=', $max);
         }
         
-        return view('adminlte.big-boxes-dash', ['products' => $products]);
+        return view('adminlte.big-boxes-dash', ['products' => $products, 'brand_check' => $brand_check, 'category_check' => $category_check, 'shoes_check' => $shoes_check]);
     }
 
     public function adidas(Request $request){
-        $products = $this->getAllProducts();
-
+        $category = $request->query('category');
+        if($category!="all" && $category!=""){
+            $products = DB::table($category)->get();
+            if($category=='sneakers'){
+                $shoes_check = "shoes";
+            }else{
+                $shoes_check = "";
+            }
+        }
+        else{
+            $products = $this->getAllProducts();
+            $shoes_check = "";
+        }  
+        $brand_check = 'adidas';
+        $category_check = "";
         $products = $products->where('brand', '=', 'adidas');
         $color = $request->query('color');
         $size = $request->query('size');
@@ -193,13 +227,27 @@ class Sklep extends Controller
                 $max=$min;
             }
             $products = $products->where('prize', '<=', $max);
-        }
-        
-        return view('adminlte.big-boxes-dash', ['products' => $products]);
+        }  
+        return view('adminlte.big-boxes-dash', ['products' => $products, 'brand_check' => $brand_check, 'category_check' => $category_check, 'shoes_check' => $shoes_check]);
     }
-    public function sport(Request $request){
-        $products = $this->getAllProducts();
 
+    public function sport(Request $request){
+        $category_check = "";
+        $category = $request->query('category');
+        if($category!="all" && $category!=""){
+            $products = DB::table($category)->get();
+            if($category=='sneakers'){
+                $shoes_check = "shoes";
+            }
+            else{
+                $shoes_check = "";
+            }
+        }
+        else{
+            $products = $this->getAllProducts();
+            $shoes_check = "";
+        }    
+        $brand_check = "";      
         $products = $products->where('type', '=', 'sport');
         $color = $request->query('color');
         $size = $request->query('size');
@@ -227,8 +275,7 @@ class Sklep extends Controller
         }
         if($brand!="all" && $brand!=""){
             $products = $products->where('brand', '=', $brand);
-        }
-        
-        return view('adminlte.big-boxes-dash', ['products' => $products]);
+        }        
+        return view('adminlte.big-boxes-dash', ['products' => $products, 'brand_check' => $brand_check, 'category_check' => $category_check, 'shoes_check' => $shoes_check]);
     }
 }
