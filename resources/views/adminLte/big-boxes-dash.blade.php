@@ -19,7 +19,7 @@
           @include('adminlte.filters')
           
           <div class="card-body">
-            <strong><h2>Products list:</h2></strong>
+            <strong><h2>Product list:</h2></strong>
             @foreach($products as $product)
             <div class="product-list">
             <p class="name">{{$product->name}}</p>

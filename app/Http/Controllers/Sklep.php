@@ -164,6 +164,71 @@ class Sklep extends Controller
             $products = $products->where('prize', '<=', $max);
         }
         
-        return view('adminlte.nike', ['products' => $products]);
+        return view('adminlte.big-boxes-dash', ['products' => $products]);
+    }
+
+    public function adidas(Request $request){
+        $products = $this->getAllProducts();
+
+        $products = $products->where('brand', '=', 'adidas');
+        $color = $request->query('color');
+        $size = $request->query('size');
+        $material = $request->query('material');
+        $min = $request->query('min');
+        $max = $request->query('max');
+        if($color!="all" && $color!=""){
+            $products = $products->where('color', '=', $color);
+        }
+        if($size!="all" && $size!=""){
+            $products = $products->where('size', '=', $size);
+        }
+        if($material!="all" && $material!=""){
+            $products = $products->where('material', '=', $material);
+        }
+        if($min!=""){
+            $products = $products->where('prize', '>=', $min);
+        }
+        if($max!=""){
+            if($max<$min){
+                $max=$min;
+            }
+            $products = $products->where('prize', '<=', $max);
+        }
+        
+        return view('adminlte.big-boxes-dash', ['products' => $products]);
+    }
+    public function sport(Request $request){
+        $products = $this->getAllProducts();
+
+        $products = $products->where('type', '=', 'sport');
+        $color = $request->query('color');
+        $size = $request->query('size');
+        $brand = $request->query('brand');
+        $material = $request->query('material');
+        $min = $request->query('min');
+        $max = $request->query('max');
+        if($color!="all" && $color!=""){
+            $products = $products->where('color', '=', $color);
+        }
+        if($size!="all" && $size!=""){
+            $products = $products->where('size', '=', $size);
+        }
+        if($material!="all" && $material!=""){
+            $products = $products->where('material', '=', $material);
+        }
+        if($min!=""){
+            $products = $products->where('prize', '>=', $min);
+        }
+        if($max!=""){
+            if($max<$min){
+                $max=$min;
+            }
+            $products = $products->where('prize', '<=', $max);
+        }
+        if($brand!="all" && $brand!=""){
+            $products = $products->where('brand', '=', $brand);
+        }
+        
+        return view('adminlte.big-boxes-dash', ['products' => $products]);
     }
 }

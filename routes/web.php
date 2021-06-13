@@ -40,6 +40,8 @@ Route::get('/dash', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/list/category/{category}/type/{type}', [App\Http\Controllers\Sklep::class, 'list'])->name('list');
 
 Route::get('/nike', [App\Http\Controllers\Sklep::class, 'nike'])->name('nike');
+Route::get('/adidas', [App\Http\Controllers\Sklep::class, 'adidas'])->name('adidas');
+Route::get('/sport', [App\Http\Controllers\Sklep::class, 'sport'])->name('sport');
 
 Route::get('product/{category}/{product}', [App\Http\Controllers\Sklep::class, 'view_single_product'])->name('single_product');
 
