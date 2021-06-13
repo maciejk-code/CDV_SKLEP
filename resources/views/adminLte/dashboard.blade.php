@@ -23,10 +23,10 @@
                   <div style=" flex:30%;  margin-left:40px">
                     <h1>Discover Nike</h1>
                     <p>Rediscover Nike products for every season</p>
-                    <p>Click for more</p>
+                    <a href="/nike" style="text-decoration: underline; color: white"><p>Click for more</p></a>
                   </div>
                   <div>
-                    <img src="{{asset('img/airmax270.jpg')}}"  style="float:right; margin-right:40px; border-radius: 25px;" alt="airmax">
+                    <a href="/nike"><img src="{{asset('img/airmax270.jpg')}}"  style="float:right; margin-right:40px; border-radius: 25px;" alt="airmax"></a>
                   </div>
                 </div>
               </div>
@@ -36,12 +36,12 @@
               <div class="card-body">
                 <div class="row">
                   <div style=" flex:70%;  margin-left:40px">
-                    <img src="{{asset('img/adidas.jpg')}}"  style="float:left; margin-left:40px; border-radius: 25px;" height="550px" alt="adidas_model">
+                    <a href="/adidas"><img src="{{asset('img/adidas.jpg')}}"  style="float:left; margin-left:40px; border-radius: 25px;" height="550px" alt="adidas_model"></a>
                   </div>
                   <div style="float:right; margin-right:40px">
                     <h1>New ADIDAS products</h1>
                     <p>Search for new products avaible only on our site</p>
-                    <p>Click for more</p>
+                    <a href="/adidas" style="text-decoration: underline; color: white"><p>Click for more</p></a>
                   </div>
                 </div>
               </div><!-- /.card-body -->
@@ -53,10 +53,10 @@
                   <div style=" flex:30%;  margin-left:40px">
                     <h1>Everything for SPORT fans</h1>
                     <p>Football? Basketball? Or even Slaps? We have EVERYTHING</p>
-                    <a href="/nike"><p>Click for more</p></a>
+                    <a href="sport" style="text-decoration: underline; color: white"><p>Click for more</p></a>
                   </div>
                   <div>
-                    <img src="{{asset('img/lewy.jpg')}}"  style="float:right; margin-right:40px; border-radius: 25px;" height="500px" alt="lewy">
+                    <a href="/adidas"><img src="{{asset('img/lewy.jpg')}}"  style="float:right; margin-right:40px; border-radius: 25px;" height="500px" alt="lewy"></a>
                   </div>
                 </div>
               </div>

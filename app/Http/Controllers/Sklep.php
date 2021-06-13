@@ -109,29 +109,131 @@ class Sklep extends Controller
 
         return view('admin.users', ['users' => $users]);
     }
-    //WIP
-    public function nike(Request $request){
-        $products = DB::table('trousers')->get();
-        $products = $products->merge(DB::table("shirts")->get());
-        $products = $products->merge(DB::table("hoodies")->get());
-        $products = $products->merge(DB::table("sneakers")->get());
-        $products = $products->merge(DB::table("accessories")->get());
 
-        $products_query = $products->where('brand', '=', 'nike');
+    public function list(Request $request, $category, $type){
+        $products_query = DB::table($category)->where('type', '=', $type);
         $color = $request->query('color');
         $size = $request->query('size');
+        $brand = $request->query('brand');
         $material = $request->query('material');
+        $min = $request->query('min');
+        $max = $request->query('max');
         if($color!="all" && $color!=""){
             $products_query = $products_query->where('color', '=', $color);
         }
         if($size!="all" && $size!=""){
             $products_query = $products_query->where('size', '=', $size);
         }
+        if($brand!="all" && $brand!=""){
+            $products_query = $products_query->where('brand', '=', $brand);
+        }
         if($material!="all" && $material!=""){
             $products_query = $products_query->where('material', '=', $material);
         }
+        if($min!=""){
+            $products_query = $products_query->where('prize', '>=', $min);
+        }
+        if($max!=""){
+            $products_query = $products_query->where('prize', '<=', $max);
+        }
+    
         $products = $products_query->get();
+        return view('adminLte.list', ['products' => $products]);
+    }
+        
+    public function nike(Request $request){
+        $products = $this->getAllProducts();
 
-        return view('adminlte.nike', ['products' => $products]);
+        $products = $products->where('brand', '=', 'nike');
+        $color = $request->query('color');
+        $size = $request->query('size');
+        $material = $request->query('material');
+        $min = $request->query('min');
+        $max = $request->query('max');
+        if($color!="all" && $color!=""){
+            $products = $products->where('color', '=', $color);
+        }
+        if($size!="all" && $size!=""){
+            $products = $products->where('size', '=', $size);
+        }
+        if($material!="all" && $material!=""){
+            $products = $products->where('material', '=', $material);
+        }
+        if($min!=""){
+            $products = $products->where('prize', '>=', $min);
+        }
+        if($max!=""){
+            if($max<$min){
+                $max=$min;
+            }
+            $products = $products->where('prize', '<=', $max);
+        }
+        
+        return view('adminlte.big-boxes-dash', ['products' => $products]);
+    }
+
+    public function adidas(Request $request){
+        $products = $this->getAllProducts();
+
+        $products = $products->where('brand', '=', 'adidas');
+        $color = $request->query('color');
+        $size = $request->query('size');
+        $material = $request->query('material');
+        $min = $request->query('min');
+        $max = $request->query('max');
+        if($color!="all" && $color!=""){
+            $products = $products->where('color', '=', $color);
+        }
+        if($size!="all" && $size!=""){
+            $products = $products->where('size', '=', $size);
+        }
+        if($material!="all" && $material!=""){
+            $products = $products->where('material', '=', $material);
+        }
+        if($min!=""){
+            $products = $products->where('prize', '>=', $min);
+        }
+        if($max!=""){
+            if($max<$min){
+                $max=$min;
+            }
+            $products = $products->where('prize', '<=', $max);
+        }
+        
+        return view('adminlte.big-boxes-dash', ['products' => $products]);
+    }
+    public function sport(Request $request){
+        $products = $this->getAllProducts();
+
+        $products = $products->where('type', '=', 'sport');
+        $color = $request->query('color');
+        $size = $request->query('size');
+        $brand = $request->query('brand');
+        $material = $request->query('material');
+        $min = $request->query('min');
+        $max = $request->query('max');
+        if($color!="all" && $color!=""){
+            $products = $products->where('color', '=', $color);
+        }
+        if($size!="all" && $size!=""){
+            $products = $products->where('size', '=', $size);
+        }
+        if($material!="all" && $material!=""){
+            $products = $products->where('material', '=', $material);
+        }
+        if($min!=""){
+            $products = $products->where('prize', '>=', $min);
+        }
+        if($max!=""){
+            if($max<$min){
+                $max=$min;
+            }
+            $products = $products->where('prize', '<=', $max);
+        }
+        if($brand!="all" && $brand!=""){
+            $products = $products->where('brand', '=', $brand);
+        }
+        
+        return view('adminlte.big-boxes-dash', ['products' => $products]);
     }
 }
