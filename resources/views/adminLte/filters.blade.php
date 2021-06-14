@@ -67,6 +67,16 @@
       <label for="fname">Max price:</label>
       <input type="number" id="max" name="max">
                    
-      <button type="submit">Click Me!</button> 
+      <button type="submit">Filter!</button>
+      <button type="button" onclick="(function(){window.location = window.location.href.split('?')[0];})()">Refresh!</button> 
     </form>
+    <script type="text/javascript">
+      document.getElementById('category').value = "<?php echo $_GET['category'] ?? 'all';?>";
+      document.getElementById('color').value = "<?php echo $_GET['color'] ?? 'all';?>";
+      document.getElementById('size').value = "<?php echo $_GET['size'] ?? 'all';?>";     
+      document.getElementById('material').value = "<?php echo $_GET['material'] ?? 'all';?>";
+      document.getElementById('min').value = "<?php echo $_GET['min'] ?? null;?>";
+      document.getElementById('max').value = "<?php echo $_GET['max'] ?? null;?>";
+      document.getElementById('brand').value = "<?php echo $_GET['brand'] ?? 'all';?>";
+    </script>
   </div>
