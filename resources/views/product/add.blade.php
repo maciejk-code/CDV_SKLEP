@@ -57,7 +57,19 @@
                                             <option value="denim">Denim</option>
                                             <option value="polyester">Polyester</option>
                                 </select>
-                            <label for="brand">Brand</label><input type="text" name="brand">
+                            <label for="brand">Brand</label>
+                            <select name="brand">
+                                <option value="nike">NIKE</option>
+                                <option value="adidas">Adidas</option>
+                                <option value="champion">Champion</option>
+                                <option value="armani">Armani</option>
+                                <option value="vans">Vans</option>
+                                <option value="converse">Converse</option>
+                                <option value="kappa">Kappa</option>
+                                <option value="tommy">Tommy Hilfiger</option>
+                                <option value="timberland">Timberland</option>
+                                <option value="puma">Puma</option>                              
+                            </select>
 
                             <button type="submit">Dodaj</button>
                         </div>

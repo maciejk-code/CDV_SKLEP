@@ -145,7 +145,7 @@ class Sklep extends Controller
         }
     
         $products = $products_query->get();
-        return view('adminLte.list', ['products' => $products, 'brand_check' => $brand_check, 'category_check' => $category_check, 'shoes_check' => $shoes_check]);
+        return view('adminLte.list', ['category' => $category, 'products' => $products, 'brand_check' => $brand_check, 'category_check' => $category_check, 'shoes_check' => $shoes_check]);
     }
         
     public function nike(Request $request){

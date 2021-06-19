@@ -23,7 +23,7 @@
             @foreach($products as $product)
             <div class="product-list">
             <p class="name">{{$product->name}}</p>
-            <img src="data:image/jpg;base64,{{$product->image}}"/>                        
+            <a href="/product/{{$category}}/{{$product->id}}"><img src="data:image/jpg;base64,{{$product->image}}"/></a>                      
             </div>
         @endforeach
         </div>
