@@ -84,22 +84,49 @@
             category = $(this).attr("data-category"),
             qty = document.getElementById('qty').value;
 
-
         if(qty==0){
             qty=1;
         }
+        //
+        // alert("Dodano do koszyka "+qty+" sztuk!");
+        //
+        // product = [{
+        //     category: category,
+        //     id: id,
+        //     qty: qty
+        // }];
+        //
+        // basket.push(product);
+        //
+        // localStorage.setItem("mycart", JSON.stringify(basket));
+        //
+        // $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
 
-        alert("Dodano do koszyka "+qty+" sztuk!");
-
-        product = [{
-            category: category,
-            id: id,
-            qty: qty
-        }];
-
-        basket.push(product);
-
-        localStorage.setItem("mycart", JSON.stringify(basket));
+        $.ajax({
+            url: "{{route('productinsert')}}",
+            method: 'POST',
+            data:{
+                _token: "{{csrf_token()}}",
+                user_id: "{{Auth::user()->id}}",
+                category: category,
+                id: id,
+                qty: qty
+            },
+            success:function(response){
+                if(response.success){
+                    alert(response.message)
+                }else{
+                    alert('error');
+                }
+            },
+            error:function(error){
+                console.log(error)
+            }
+        });
 
     });
 

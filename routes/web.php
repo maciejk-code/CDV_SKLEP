@@ -47,4 +47,12 @@ Route::get('product/{category}/{product}', [App\Http\Controllers\Sklep::class, '
 
 Route::get('/cart', [\App\Http\Controllers\Sklep::class, 'show_cart'])->name('cart');
 
+Route::post('/productinsert', [\App\Http\Controllers\Sklep::class, 'ajaxRequestPost'])->name('productinsert');
+
+Route::get('/checkout', [\App\Http\Controllers\Sklep::class, 'view_checkout'])->name('checkout');
+
+Route::get('/admin/view_orders', [\App\Http\Controllers\Sklep::class, 'view_orders'])->name('view_orders');
+
+
+
 //[App\Http\Controllers\HomeController::class, 'index3'

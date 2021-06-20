@@ -15,6 +15,7 @@ class ShoppingCart extends Migration
     {
         Schema::create('shopping_cart', function (Blueprint $table) {
             $table->id('id');
+            $table->integer('user_id');
             $table->string('category');
             $table->integer('qty');
         });
@@ -28,7 +29,7 @@ class ShoppingCart extends Migration
     public function down()
     {
         Schema::table('shopping_cart', function (Blueprint $table) {
-            
+
         });
     }
 }

@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.min.css">
+
+    <meta name="csrf-token" content="@csrf" />
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -129,7 +131,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/layout/boxed.html" class="nav-link">
+                                <a href="{{route('view_orders')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>View orders</p>
                                 </a>
