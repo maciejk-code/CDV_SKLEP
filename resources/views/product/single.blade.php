@@ -20,7 +20,7 @@
                     <div class="product p-4">
                         <div class="image">
                             <h2>Galeria</h2>
-                            <img src="data:image/jpg;base64,{{$product->image}}" width="100%" height="300px"/>
+                            <img src="data:image/jpg;base64,{{$product->image}}" width="100%" height="100%"/>
                         </div>
                         <div class="product-info">
                             <h2 class="product-name-single">{{$product->name}}</h2>
