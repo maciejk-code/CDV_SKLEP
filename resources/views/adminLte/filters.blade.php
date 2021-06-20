@@ -25,9 +25,9 @@
       <select id="size" name="size">
         @if($shoes_check == "")      
           <option value="all">all sizes</option>
-          <option value="s">S</option>
-          <option value="m">M</option>
-          <option value="l">L</option>  
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>  
         @else
           <option value="all">all sizes</option>
         @endif     
