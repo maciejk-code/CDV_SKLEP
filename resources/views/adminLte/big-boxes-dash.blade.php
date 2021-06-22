@@ -20,10 +20,15 @@
           
           <div class="card-body">
             <strong><h2>Product list:</h2></strong>
+            {{-- <p>{{$products}}</p> --}}
             @foreach($products as $product)
+            <br><br>
             <div class="product-list">
-            <p class="name">{{$product->name}}</p>
-            <a href="/product/{{$category}}/{{$product->id}}"><img src="data:image/jpg;base64,{{$product->image}}"/></a>                      
+            {{-- {{get_class($product)}} --}}
+            {{-- {{$product}} --}}
+            <p class="name">{{strtoupper($product->brand)}} {{$product->name}} Size:{{$product->size}}</p>
+            {{-- <p class="name">{{$product->category}}</p> --}}
+            <a href="/product/{{$product->category}}/{{$product->id}}"><img src="data:image/jpg;base64,{{$product->image}}"/></a><br>                     
             </div>
         @endforeach
         </div>
